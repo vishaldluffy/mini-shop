@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#172d26">
+<title>Desk &amp; Day | Mini shop</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+  <a class="brand" href="./">Desk &amp; Day</a>
+  <a class="cart-link" href="#cart">Cart <span id="badge">0</span></a>
+</div></header>
+<main class="wrap">
+  <header class="intro"><h1>Everyday desk goods</h1><p>Stationery and simple tools for your workspace.</p></header>
+  <div class="layout">
+    <section aria-labelledby="catalog-title"><h2 id="catalog-title">Shop all</h2><div id="products" class="products"></div></section>
+    <aside id="cart" aria-labelledby="cart-title">
+      <h2 id="cart-title" tabindex="-1">Your cart</h2>
+      <p id="empty">Your cart is empty.</p>
+      <table id="cart-table" hidden>
+        <thead><tr><th scope="col">Item</th><th scope="col">Qty</th><th scope="col">Total</th></tr></thead>
+        <tbody id="cart-rows"></tbody>
+      </table>
+      <dl id="totals" class="totals"></dl>
+      <p class="delivery">₹40 delivery on orders below ₹500. Free from ₹500.</p>
+      <button type="button" id="checkout" disabled>Preview checkout</button>
+      <p id="feedback" role="status" class="sr-only"></p>
+      <p id="storage-error" role="status" hidden>Cart storage is unavailable in this browser.</p>
+    </aside>
+  </div>
+  <noscript>Enable JavaScript to browse products and use the cart.</noscript>
+</main>
+<dialog id="preview" aria-labelledby="preview-title">
+  <h2 id="preview-title">Checkout preview</h2>
+  <p>This is a demo. No payment is collected.</p>
+  <ul id="order-items"></ul>
+  <dl id="order-totals" class="totals"></dl>
+  <form method="dialog"><button autofocus>Back to cart</button></form>
+</dialog>
+</body>
+</html>
+
