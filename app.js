@@ -1,12 +1,12 @@
 const products = [
-  { id: "notebook", name: "Pocket Notebook", category: "Paper", price: 129, icon: "📓" },
-  { id: "pens", name: "Fine-Line Pens", category: "Writing", price: 179, icon: "🖊️" },
-  { id: "notes", name: "Sticky Notes", category: "Paper", price: 89, icon: "🗒️" },
-  { id: "lamp", name: "Orbit Desk Lamp", category: "Lighting", price: 749, icon: "💡" },
-  { id: "organiser", name: "Wood Desk Tray", category: "Storage", price: 429, icon: "🪵" },
-  { id: "mug", name: "Ceramic Mug", category: "Accessories", price: 299, icon: "☕" },
-  { id: "plant", name: "Mini Planter", category: "Accessories", price: 239, icon: "🪴" },
-  { id: "scissors", name: "Craft Scissors", category: "Tools", price: 159, icon: "✂️" },
+  { id: "notebook", name: "Pocket Notebook", category: "Paper", price: 129 },
+  { id: "pens", name: "Fine-Line Pens", category: "Writing", price: 179 },
+  { id: "notes", name: "Sticky Notes", category: "Paper", price: 89 },
+  { id: "lamp", name: "Orbit Desk Lamp", category: "Lighting", price: 749 },
+  { id: "organiser", name: "Wood Desk Tray", category: "Storage", price: 429 },
+  { id: "mug", name: "Ceramic Mug", category: "Accessories", price: 299 },
+  { id: "plant", name: "Mini Planter", category: "Accessories", price: 239 },
+  { id: "scissors", name: "Craft Scissors", category: "Tools", price: 159 },
 ];
 const storageKey = "desk-and-day.cart";
 const quantityLimit = 99;
@@ -58,8 +58,11 @@ function actionButton(text, action, product, label) {
 function renderProducts() {
   for (const product of products) {
     const card = element("article", "", "product");
-    const visual = element("span", product.icon, "visual");
-    visual.setAttribute("aria-hidden", "true");
+    const visual = element("img", "", "visual");
+    visual.src = "images/" + product.id + ".webp";
+    visual.alt = "";
+    visual.width = 360;
+    visual.height = 360;
     card.append(
       visual, element("h3", product.name), element("p", product.category, "category"),
       element("p", money(product.price), "price"),
@@ -181,4 +184,3 @@ checkout.addEventListener("click", () => {
 
 renderProducts();
 renderCart();
-
